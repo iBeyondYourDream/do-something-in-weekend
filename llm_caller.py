@@ -25,7 +25,7 @@ def call_llm(prompt: str, config_path: str = "config.yaml") -> str:
         "messages": [{"role": "user", "content": prompt}],
     }
 
-    response = requests.post(url, headers=headers, json=payload)
+    response = requests.post(url, headers=headers, json=payload, timeout=30)
     response.raise_for_status()
 
     result = response.json()
