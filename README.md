@@ -46,7 +46,7 @@ llm:
   model: "gpt-4o"
 ```
 
-> ⚠️ `config.yaml` 已被 `.gitignore` 忽略，请勿将真实 API Key 提交到版本库。
+> ⚠️ `config.yaml` 已被 `.gitignore` 忽略；如果之前已提交过该文件，请先执行 `git rm --cached config.yaml` 取消跟踪，再提交。
 
 ### 3. 运行示例
 
