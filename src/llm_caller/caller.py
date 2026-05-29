@@ -16,7 +16,7 @@ def call_llm(prompt: str, config_path: str = "config.yaml") -> str:
     model = llm_config.get("model", "gpt-4o")
 
     headers = {
-        "Authorization": f"Bearer {api_key}",
+        "Authorization": "Bearer " + api_key,
         "Content-Type": "application/json",
     }
 
@@ -30,8 +30,3 @@ def call_llm(prompt: str, config_path: str = "config.yaml") -> str:
 
     result = response.json()
     return result["choices"][0]["message"]["content"]
-
-
-if __name__ == "__main__":
-    reply = call_llm("Hello, who are you?")
-    print(reply)
